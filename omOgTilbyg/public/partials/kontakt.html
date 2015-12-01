@@ -1,0 +1,38 @@
+<div class="container">
+<h1>{{Title}}</h1>
+<form role="form" name="registerForm" novalidate ng-submit="submit()">
+    <div class="form-group">
+        <label for="name">Navn:</label>
+        <input type="text" class="form-control" name="name" ng-model="formData.name" required>
+            <span style="color:#ff0000" ng-show="registerForm.name.$dirty && registerForm.name.$invalid">
+                <span ng-show="registerForm.name.$error.required">Navn er påkrævet</span>
+            </span>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email:</label>
+        <input type="email" class="form-control" name="email" ng-model="formData.email" required>
+            <span style="color:#ff0000" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                <span ng-show="registerForm.email.$error.required">Email er påkrævet</span>
+            </span>
+    </div>
+
+    <div class="form-group">
+        <label for="Emne">Emne:</label>
+        <input type="text" class="form-control" name="emnde" ng-model="formData.emne" required>
+            <span style="color:#ff0000" ng-show="registerForm.emne.$dirty && registerForm.emne.$invalid">
+                <span ng-show="registerForm.emne.$error.required">Emne felt er påkrævet</span>
+            </span>
+    </div>
+
+    <div class="form-group">
+        <label for="besked">Besked:</label>
+            <textarea rows="3" class="form-control" name="besked" ng-model="formData.besked" required>
+            <span style="color:#f" ng-show="registerForm.besked.$dirty && registerForm.besked.$invalid">
+                <span ng-show="registerForm.besked.$error.required">Besked er påkrævet</span>
+            </span>
+                </textarea>
+    </div>
+    <button type="submit" class="btn btn-sucess" ng-click="kontakt()">Send</button>
+</form>
+
+</div>
